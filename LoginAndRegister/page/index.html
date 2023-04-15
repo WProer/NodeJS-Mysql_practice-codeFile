@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        用户名：<input type="text" id="username"><br>
+        密码：<input type="password" id="PassWord">
+        <input type="button" value="注册" id="register">
+        <input type="button" value="登录" id="login">
+    </form>
+
+    <script src="./jquery-3.5.1.js"></script>
+
+    <script>
+        $("#register").on("click",function () {
+            $.ajax({
+                method:"POST",
+                url:"http://localhost:8080/register",
+                data:{username:$("#username").val(),PassWord:$("#PassWord").val()},
+                dataType:"json",
+                success(data){
+                    console.log("data--->",data);
+                }, 
+                error(err){
+                    console.log("err--->",err);
+                }
+            })
+        });
+
+        $("#login").on("click",function () {
+            $.ajax({
+                method:"GET",
+                url:"http://localhost:8080/login",
+                data:{username:$("#username").val(),PassWord:$("#PassWord").val()},
+                dataType:"json",
+                success(data){
+                    console.log("data--->",data);
+                }, 
+                error(err){
+                    console.log("err--->",err);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

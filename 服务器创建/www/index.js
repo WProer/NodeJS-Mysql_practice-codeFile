@@ -1,0 +1,1 @@
+console.log("打开了index.js文件");
