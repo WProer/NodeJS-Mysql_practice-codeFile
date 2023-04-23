@@ -1,0 +1,145 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:npm</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="npm">NPM</h1>
+<p><strong><code>npm</code></strong> ：全称 <strong>Node Package Manager</strong> ，node 包管理工具</p>
+<p>包就是别人写的 nodejs 模块</p>
+<hr>
+<h3 id="-"><code>设置淘宝镜像</code></h3>
+<blockquote>
+<p>设置镜像源</p>
+</blockquote>
+<ul>
+<li><p>临时使用</p>
+<pre><code class="lang-shell">npm --registry https://registry.npm.taobao.org install xxx
+</code></pre>
+</li>
+<li><p>永久使用
+配置：</p>
+<pre><code class="lang-shell">npm config set registry https://registry.npm.taobao.org
+</code></pre>
+<p>可通过以下命令查看是否配置成功</p>
+</li>
+</ul>
+<pre><code class="lang-shell">npm config get registry     # 
+
+npm config list             # 查看配置信息
+npm config list -l          # 查看所有默认的配置信息
+
+npm info express
+</code></pre>
+<pre><code class="lang-shell">
+npm config -h   # 命令帮助，查看二级指令
+
+</code></pre>
+<p>说明：永久配置修改的是 <code>.npmrc</code> 文件（在npm的安装目录下）</p>
+<ul>
+<li>恢复官方源<pre><code class="lang-shell">npm config set registry https://registry.npmjs.org
+</code></pre>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>cnpm 的使用</p>
+</blockquote>
+<p>安装淘宝的cnpm，然后在使用时直接将npm命令替换成cnpm命令即可</p>
+<pre><code class="lang-shell">npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<hr>
+<blockquote>
+<p>npm指令</p>
+<ul>
+<li>npm -h ：</li>
+<li>npm config -h ：二级指令，配置指令<ul>
+<li>npm config list ：查看配置</li>
+<li>npm config set ：设置相关配置</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
